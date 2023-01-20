@@ -1,7 +1,7 @@
 package com.jeterson.meuorcamento.application.rest;
 
 import com.jeterson.meuorcaento.domain.application.service.dto.auth.TokenValidResponse;
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityService;
+import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final SecurityService securityService;
+    private final SecurityApplicationService securityApplicationService;
 
     @GetMapping("/validate-token")
     public ResponseEntity<TokenValidResponse> validateToken(@RequestParam(name = "token") String token) {
-        var isTokenValid = securityService.isTokenValid(token);
+        var isTokenValid = securityApplicationService.isTokenValid(token);
         return ResponseEntity.ok(new TokenValidResponse(isTokenValid));
     }
 }

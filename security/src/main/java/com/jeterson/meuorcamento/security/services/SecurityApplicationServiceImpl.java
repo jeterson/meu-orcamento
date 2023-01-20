@@ -1,6 +1,6 @@
 package com.jeterson.meuorcamento.security.services;
 
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityService;
+import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.input.service.UsernameApplicationService;
 import com.jeterson.meuorcamento.domain.core.entities.User;
 import com.jeterson.meuorcamento.security.utils.JwtUtils;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SecurityServiceImpl implements SecurityService {
+public class SecurityApplicationServiceImpl implements SecurityApplicationService {
 
     @Qualifier("usernameApplicationService")
     private final UsernameApplicationService usernameApplicationService;

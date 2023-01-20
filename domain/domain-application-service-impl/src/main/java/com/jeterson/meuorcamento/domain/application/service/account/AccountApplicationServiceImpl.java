@@ -4,16 +4,12 @@ import com.jeterson.meuorcaento.domain.application.service.dto.account.CreateAcc
 import com.jeterson.meuorcaento.domain.application.service.dto.account.UpdateAccountCommand;
 import com.jeterson.meuorcaento.domain.application.service.input.service.AccountApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.input.service.BankApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityService;
+import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.output.repository.AccountRepository;
-import com.jeterson.meuorcaento.domain.application.service.output.repository.BankRepository;
 import com.jeterson.meuorcamento.common.domain.valueobjects.Money;
 import com.jeterson.meuorcamento.domain.core.entities.Account;
-import com.jeterson.meuorcamento.domain.core.entities.Bank;
 import com.jeterson.meuorcamento.domain.core.entities.User;
-import com.jeterson.meuorcamento.domain.core.exceptions.account.AccountDomainException;
 import com.jeterson.meuorcamento.domain.core.exceptions.account.AccountNotFoundException;
-import com.jeterson.meuorcamento.domain.core.valueobjects.AccountType;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,7 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountApplicationServiceImpl implements AccountApplicationService {
 
-    private final SecurityService securityService;
+    private final SecurityApplicationService securityApplicationService;
     private final BankApplicationService bankApplicationService;
     private final AccountRepository accountRepository;
 
@@ -38,7 +34,7 @@ public class AccountApplicationServiceImpl implements AccountApplicationService 
     public Account createWithUser(CreateAccountCommand createAccountCommand, User user) {
         var bank = bankApplicationService.findById(createAccountCommand.getBankId());
         if(user == null)
-            user = securityService.getAuthenticatedUser();
+            user = securityApplicationService.getAuthenticatedUser();
 
         var account = Account.builder()
                 .type(createAccountCommand.getAccountType())
@@ -55,7 +51,7 @@ public class AccountApplicationServiceImpl implements AccountApplicationService 
     @Override
     public Account update(UpdateAccountCommand updateAccountCommand) {
         var bank = bankApplicationService.findById(updateAccountCommand.getBankId());
-        var user = securityService.getAuthenticatedUser();
+        var user = securityApplicationService.getAuthenticatedUser();
 
         if(accountRepository.findById(updateAccountCommand.getId(), user).isEmpty())
             throw new AccountNotFoundException(updateAccountCommand.getId(), user);
@@ -74,7 +70,7 @@ public class AccountApplicationServiceImpl implements AccountApplicationService 
 
     @Override
     public Account findById(Long id) {
-        var user = securityService.getAuthenticatedUser();
+        var user = securityApplicationService.getAuthenticatedUser();
         var account = accountRepository.findById(id, user);
 
         if(account.isEmpty())
@@ -85,7 +81,7 @@ public class AccountApplicationServiceImpl implements AccountApplicationService 
 
     @Override
     public List<Account> findAll() {
-        var user = securityService.getAuthenticatedUser();
+        var user = securityApplicationService.getAuthenticatedUser();
         return accountRepository.findAll(user);
     }
 }

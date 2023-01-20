@@ -5,7 +5,7 @@ import com.jeterson.meuorcaento.domain.application.service.dto.user.CreateUserCo
 import com.jeterson.meuorcaento.domain.application.service.dto.user.UpdateUserCommand;
 import com.jeterson.meuorcaento.domain.application.service.input.service.AccountApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.input.service.BankApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityService;
+import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.input.service.UserApplicationService;
 import com.jeterson.meuorcaento.domain.application.service.output.repository.UserRepository;
 import com.jeterson.meuorcamento.common.domain.valueobjects.Money;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class UserApplicationServiceImpl implements UserApplicationService {
 
     private final UserRepository userRepository;
-    private final SecurityService securityService;
+    private final SecurityApplicationService securityApplicationService;
     private final UserDataMapper userDataMapper;
     private final BankApplicationService bankApplicationService;
     private final AccountApplicationService accountApplicationService;
@@ -31,7 +31,7 @@ public class UserApplicationServiceImpl implements UserApplicationService {
     public User create(@Valid CreateUserCommand createUserCommand) {
         var user = userDataMapper.createUserCommandToUser(createUserCommand);
 
-        user.setPassword(securityService.encode(user.getPassword()));
+        user.setPassword(securityApplicationService.encode(user.getPassword()));
         user = userRepository.save(user);
         user.removePassword();
         var account = CreateAccountCommand.builder()
@@ -56,7 +56,7 @@ public class UserApplicationServiceImpl implements UserApplicationService {
         if(user.getPassword() == null || user.getPassword().isEmpty() || user.getPassword().isBlank())
             user.setPassword(userAux.get().getPassword());
         else if(user.getPassword() != userAux.get().getPassword())
-            user.setPassword(securityService.encode(user.getPassword()));
+            user.setPassword(securityApplicationService.encode(user.getPassword()));
        user = userRepository.save(user);
        user.removePassword();
        return user;
