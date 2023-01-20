@@ -1,0 +1,50 @@
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+.bg-primary1 {
+  background: #042f4d;
+}
+
+.text-primary1 {
+  color: #042f4d;
+}
+
+.valor::-webkit-outer-spin-button,
+.valor::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.valor[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.my-sticky-dynamic {
+  /* height or max-height is important */
+  height: 410px;
+  /* this will be the loading indicator */
+}
+
+.my-sticky-dynamic .q-table__top,
+.my-sticky-dynamic .q-table__bottom,
+.my-sticky-dynamic thead tr:first-child th {
+  background-color: #fff;
+}
+
+.my-sticky-dynamic thead tr th {
+  position: sticky;
+  z-index: 1;
+}
+
+.my-sticky-dynamic thead tr:last-child th {
+  /* height of all previous header rows */
+  top: 48px;
+}
+
+.my-sticky-dynamic thead tr:first-child th {
+  top: 0;
+}
