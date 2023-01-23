@@ -1,8 +1,8 @@
 package com.jeterson.meuorcamento.domain.core.entities;
 
 import com.jeterson.meuorcamento.common.domain.valueobjects.Money;
-import com.jeterson.meuorcamento.domain.core.valueobjects.AccountColor;
 import com.jeterson.meuorcamento.domain.core.valueobjects.AccountType;
+import com.jeterson.meuorcamento.domain.core.valueobjects.Color;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -15,7 +15,7 @@ public class Account {
     private AccountType type;
     private User user;
     private Money balance;
-    private AccountColor color = AccountColor.BLACK;
+    private Color color = Color.BLACK;
 
     public String getColorHex() {
         return color.getCode();

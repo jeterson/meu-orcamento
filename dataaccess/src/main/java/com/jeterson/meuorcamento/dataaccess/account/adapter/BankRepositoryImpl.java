@@ -1,6 +1,6 @@
 package com.jeterson.meuorcamento.dataaccess.account.adapter;
 
-import com.jeterson.meuorcaento.domain.application.service.output.repository.BankRepository;
+import com.jeterson.meuorcamento.domain.application.service.output.repository.BankRepository;
 import com.jeterson.meuorcamento.dataaccess.account.mapper.BankDataAccessMapper;
 import com.jeterson.meuorcamento.dataaccess.account.repository.BankJpaRepository;
 import com.jeterson.meuorcamento.domain.core.entities.Bank;

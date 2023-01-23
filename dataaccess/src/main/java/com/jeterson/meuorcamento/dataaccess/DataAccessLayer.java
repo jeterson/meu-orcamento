@@ -1,8 +1,8 @@
 package com.jeterson.meuorcamento.dataaccess;
 
-import com.jeterson.meuorcaento.domain.application.service.input.service.BankApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.input.service.UserApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.BankApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.SecurityApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.UserApplicationService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

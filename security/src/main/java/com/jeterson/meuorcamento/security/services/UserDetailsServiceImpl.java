@@ -1,6 +1,6 @@
 package com.jeterson.meuorcamento.security.services;
 
-import com.jeterson.meuorcaento.domain.application.service.input.service.UsernameApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.UsernameApplicationService;
 import com.jeterson.meuorcamento.security.models.UserDetailsData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;

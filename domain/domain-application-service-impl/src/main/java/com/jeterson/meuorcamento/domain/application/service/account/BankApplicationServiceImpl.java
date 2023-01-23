@@ -1,7 +1,7 @@
 package com.jeterson.meuorcamento.domain.application.service.account;
 
-import com.jeterson.meuorcaento.domain.application.service.input.service.BankApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.output.repository.BankRepository;
+import com.jeterson.meuorcamento.domain.application.service.input.service.BankApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.output.repository.BankRepository;
 import com.jeterson.meuorcamento.domain.core.entities.Bank;
 import com.jeterson.meuorcamento.domain.core.exceptions.bank.BankNotFoundException;
 import lombok.RequiredArgsConstructor;

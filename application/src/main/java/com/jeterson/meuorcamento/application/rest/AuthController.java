@@ -1,7 +1,7 @@
 package com.jeterson.meuorcamento.application.rest;
 
-import com.jeterson.meuorcaento.domain.application.service.dto.auth.TokenValidResponse;
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.dto.auth.TokenValidResponse;
+import com.jeterson.meuorcamento.domain.application.service.input.service.SecurityApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

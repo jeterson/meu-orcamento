@@ -1,7 +1,7 @@
 package com.jeterson.meuorcamento.security.services;
 
-import com.jeterson.meuorcaento.domain.application.service.input.service.SecurityApplicationService;
-import com.jeterson.meuorcaento.domain.application.service.input.service.UsernameApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.SecurityApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.input.service.UsernameApplicationService;
 import com.jeterson.meuorcamento.domain.core.entities.User;
 import com.jeterson.meuorcamento.security.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;

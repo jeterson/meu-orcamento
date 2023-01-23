@@ -1,6 +1,6 @@
 package com.jeterson.meuorcamento.dataaccess.account.adapter;
 
-import com.jeterson.meuorcaento.domain.application.service.output.repository.AccountRepository;
+import com.jeterson.meuorcamento.domain.application.service.output.repository.AccountRepository;
 import com.jeterson.meuorcamento.dataaccess.account.mapper.AccountDataAccessMapper;
 import com.jeterson.meuorcamento.dataaccess.account.repository.AccountJpaRepository;
 import com.jeterson.meuorcamento.dataaccess.user.mapper.UserDataAccessMapper;

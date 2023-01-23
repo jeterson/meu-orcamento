@@ -1,8 +1,8 @@
 package com.jeterson.meuorcamento.application.rest;
 
-import com.jeterson.meuorcaento.domain.application.service.dto.user.CreateUserCommand;
-import com.jeterson.meuorcaento.domain.application.service.dto.user.UpdateUserCommand;
-import com.jeterson.meuorcaento.domain.application.service.input.service.UserApplicationService;
+import com.jeterson.meuorcamento.domain.application.service.dto.user.CreateUserCommand;
+import com.jeterson.meuorcamento.domain.application.service.dto.user.UpdateUserCommand;
+import com.jeterson.meuorcamento.domain.application.service.input.service.UserApplicationService;
 import com.jeterson.meuorcamento.domain.core.entities.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.jeterson.meuorcamento.domain.application.service.user.mapper;
 
-import com.jeterson.meuorcaento.domain.application.service.dto.user.CreateUserCommand;
-import com.jeterson.meuorcaento.domain.application.service.dto.user.UpdateUserCommand;
+import com.jeterson.meuorcamento.domain.application.service.dto.user.CreateUserCommand;
+import com.jeterson.meuorcamento.domain.application.service.dto.user.UpdateUserCommand;
 import com.jeterson.meuorcamento.domain.core.entities.User;
 import org.springframework.stereotype.Component;
 

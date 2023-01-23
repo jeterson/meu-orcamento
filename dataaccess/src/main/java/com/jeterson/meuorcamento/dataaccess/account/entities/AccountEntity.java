@@ -1,9 +1,6 @@
 package com.jeterson.meuorcamento.dataaccess.account.entities;
 
 import com.jeterson.meuorcamento.dataaccess.user.entities.UserEntity;
-import com.jeterson.meuorcamento.domain.core.entities.Bank;
-import com.jeterson.meuorcamento.domain.core.entities.User;
-import com.jeterson.meuorcamento.domain.core.valueobjects.AccountColor;
 import com.jeterson.meuorcamento.domain.core.valueobjects.AccountType;
 import jakarta.persistence.*;
 import lombok.*;
